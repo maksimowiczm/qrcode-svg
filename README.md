@@ -1,41 +1,43 @@
-![SVG QR Code Generator](img/generated.svg)
-
 ## QR Code svg generator
-Pure javascript QR Code generator. Armed with elegant method for creating SVG nodes.
 
-[QR Code svg generator](https://datalog.github.io/demo/qrcode-svg/) (Live demo)
+Fork of [qrcode-svg ](https://github.com/datalog/qrcode-svg) with added TypeScript wrapper.
 
+Original repo provides only minified version so obviously there is no way to add new features or fix bugs.
 
-## Easy to start
-After `qrcode.min.js` is downloaded and connected to your html5 page, call:
-```javascript
-var
-svgNode = QRCode("Hello World!");
+## Example
+
+```bash
+npm install @maksimowicz/qrcode-svg
 ```
 
-All other options:
-```javascript
-var
-svgNode = QRCode({
+```typescript
+import { QRCode } from "@maksimowicz/qrcode-svg";
 
-     msg :  "Your message here"
-    ,dim :   300
-    ,pad :   6
-    ,mtx :   7
-    ,ecl :  "H"
-    ,ecb :   0
-    ,pal : ["#000000", "#f2f4f8"]
-    ,vrb :   1
+const svgNode = QRCode({ message: "Hello World!" });
+```
 
-});
+### Available options
+
+```typescript
+interface Props {
+  message: string;
+  size?: number;
+  padding?: number;
+  mask?: undefined | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  errorCorrectionLevel?: "L" | "M" | "Q" | "H";
+  errorCorrectionBoost?: boolean;
+  color?: [string, string],
+  verbose?: boolean;
+}
 ```
 
 ## Options
-* **msg** - QR Code ``message``, obviously, this is **mandatory parameter**.
-* **dim** - is equal to needed dimention (width or height) in pixels, default value is `256`.
-* **pad** - white space padding, default value is `4` blocks, set `0` for no padding.
-* **mtx** - mask pattern from `0` to `7`, default value is `-1` and best suitable mask is choosen automatically
-* **ecl** - error correction level: `L`, `M`, `H`, `Q`, default value is `M`.
-* **ecb** - error correction level boost, default value is `1`, set `0` if no boost needed.
-* **pal** - is array of [`color`,`background-color`] strings that represent hex color codes, default value is [`'#000'`] along with transparent background. Set [`'#000'`,`'#fff'`] to make background opaque.
-* **vrb** - svg node is optimized to be compact and default value is `0`, set this parameter to `1` in case you need more verbose output.
+
+* **message** - QR Code `message`, obviously, this is **mandatory parameter**.
+* **size** - is equal to needed dimension (width or height) in pixels, default value is `256`.
+* **padding** - white space padding, default value is `4` blocks, set `0` for no padding.
+* **mask** - mask pattern from `0` to `7`, if undefined suitable mask is choosen automatically
+* **errorCorrectionLevel** - error correction level: `L`, `M`, `H`, `Q`, default value is `M`.
+* **errorCorrectionBoost** - error correction level boost, default value is `true`, set `false` if no boost needed.
+* **color** - is array of [`color`,`background-color`] strings that represent hex color codes, default value is [`'#000'`] along with transparent background. Set [`'#000'`,`'#fff'`] to make background opaque.
+* **verbose** - svg node is optimized to be compact and default value is `false`, set this parameter to `true` in case you need more verbose output.

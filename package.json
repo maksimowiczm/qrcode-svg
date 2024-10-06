@@ -1,0 +1,22 @@
+{
+	"name": "@maksimowicz/qrcode-svg",
+	"version": "1.0.0",
+	"description": "No nonsense QR code svg generator",
+	"keywords": ["qrcode", "svg"],
+	"contributors": [{ "name": "datalog" }, { "name": "maksimowiczm" }],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/maksimowiczm/qrcode-svg.git"
+	},
+	"files": ["build"],
+	"main": "build/qrcode.js",
+	"type": "module",
+	"types": "build/qrcode.d.ts",
+	"devDependencies": {
+		"typescript": "^5.6.2"
+	},
+	"scripts": {
+		"build": "npx tsc"
+	}
+}
