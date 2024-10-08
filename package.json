@@ -1,6 +1,6 @@
 {
 	"name": "@maksimowicz/qrcode-svg",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "No nonsense QR code svg generator",
 	"keywords": ["qrcode", "svg"],
 	"contributors": [{ "name": "datalog" }, { "name": "maksimowiczm" }],

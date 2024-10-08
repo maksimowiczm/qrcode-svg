@@ -18,7 +18,7 @@ export function QRCode({
   mask = undefined,
   errorCorrectionLevel = "M",
   errorCorrectionBoost = true,
-  color = ["#000", "#FFF"],
+  color = ["#000", "transparent"],
   verbose = false,
 }: Props ): SVGElement {
   const params = {
@@ -28,7 +28,7 @@ export function QRCode({
     mtx: mask ?? -1,
     ecl: errorCorrectionLevel,
     ecb: errorCorrectionBoost ? 1 : 0,
-    pal: [color, "transparent"],
+    pal: color,
     vrb: verbose ? 1 : 0,
   };
   return QRCodeJs(params);

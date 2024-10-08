@@ -4,6 +4,8 @@ Fork of [qrcode-svg ](https://github.com/datalog/qrcode-svg) with added TypeScri
 
 Original repo provides only minified version so obviously there is no way to add new features or fix bugs.
 
+[npm package](https://www.npmjs.com/package/@maksimowicz/qrcode-svg)
+
 ## Example
 
 ```bash
@@ -34,10 +36,10 @@ interface Props {
 ## Options
 
 * **message** - QR Code `message`, obviously, this is **mandatory parameter**.
-* **size** - is equal to needed dimension (width or height) in pixels, default value is `256`.
-* **padding** - white space padding, default value is `4` blocks, set `0` for no padding.
-* **mask** - mask pattern from `0` to `7`, if undefined suitable mask is choosen automatically
+* **size** - width and height in pixels, default value is `256`.
+* **padding** - in pixels, default value is `4`, set `0` for no padding.
+* **mask** - mask pattern from `0` to `7`, if undefined suitable mask is chosen automatically.
 * **errorCorrectionLevel** - error correction level: `L`, `M`, `H`, `Q`, default value is `M`.
-* **errorCorrectionBoost** - error correction level boost, default value is `true`, set `false` if no boost needed.
-* **color** - is array of [`color`,`background-color`] strings that represent hex color codes, default value is [`'#000'`] along with transparent background. Set [`'#000'`,`'#fff'`] to make background opaque.
+* **errorCorrectionBoost** - error correction level boost, default value is `true`, set to `false` if no boost needed.
+* **color** - array of [`color`,`background-color`] strings that represent hex color codes, default value is [`"#000", "transparent"`].
 * **verbose** - svg node is optimized to be compact and default value is `false`, set this parameter to `true` in case you need more verbose output.
